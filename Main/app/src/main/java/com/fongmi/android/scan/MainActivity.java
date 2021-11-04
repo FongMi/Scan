@@ -17,6 +17,7 @@ import com.kroegerama.kaiteki.bcode.BarcodeResultListener;
 import com.kroegerama.kaiteki.bcode.ui.BarcodeFragment;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity implements BarcodeResultListener {
 
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements BarcodeResultList
 	}
 
 	private void initView() {
-		getSupportFragmentManager().beginTransaction().replace(R.id.container, BarcodeFragment.Companion.makeInstance(Arrays.asList(BarcodeFormat.QR_CODE), false)).commit();
+		getSupportFragmentManager().beginTransaction().replace(R.id.container, BarcodeFragment.Companion.makeInstance(Collections.singletonList(BarcodeFormat.QR_CODE), false)).commit();
 	}
 
 	@Override
